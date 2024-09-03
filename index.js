@@ -1,3 +1,4 @@
+// import express from 'express';
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -168,7 +169,7 @@ async function run() {
           productIds: [req?.body?.productId],
         };
         const result = await cartCollection.insertOne(cart);
-        
+
         res.send(result);
       }
     });
@@ -199,10 +200,10 @@ async function run() {
     });
 
     // Send a ping to confirm a successful connection
-    await client.db('admin').command({ ping: 1 });
-    console.log(
-      'Pinged your deployment. You successfully connected to MongoDB!'
-    );
+    // await client.db('admin').command({ ping: 1 });
+    // console.log(
+    //   'Pinged your deployment. You successfully connected to MongoDB!'
+    // );
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
